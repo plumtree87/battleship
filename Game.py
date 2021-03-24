@@ -1,5 +1,5 @@
 from Board import Board, P1Board, P2Board
-import os
+
 from time import sleep
 
 
@@ -176,12 +176,10 @@ class Game:
         if hit[0] == True:
             enemy.ship_points -= 1
             self.fire_xy(player, hit[1], enemy)
-            #print(player.player, "'s                        TOP BOARD           where", player.player, "has fired.")
             player.print_board(player.fired_upon_locations)
             print(" HIT!!!")
         else:
             self.miss_fire_xy(player, hit[1], enemy)
-            #print(player.player, "'s                        TOP BOARD           where", player.player, "has fired.")
             player.print_board(player.fired_upon_locations)
             print("You missed..")
 
@@ -217,8 +215,7 @@ class Game:
                 j += 1
             i += 1
             j -= 20
-        print(player_firing.player, "            TOP BOARD            places you've fired")
-        #player_firing.print_board(player_firing.fired_upon_locations)
+        print(player_firing.player, "'s            TOP BOARD            places you've fired")
 
     def fire_xy(self, player_firing, fire_coordinates, enemy_being_fired_at):
         i = 0
@@ -236,39 +233,29 @@ class Game:
                 j += 1
             i += 1
             j -= 20
-        print(player_firing.player, "            TOP BOARD            places you've fired")
-        #player_firing.print_board(player_firing.fired_upon_locations)
+        print(player_firing.player, "'s            TOP BOARD            places you've fired")
 
     def play_rounds(self, player1, player2):
         while player1.ship_points > 0 or player2.ship_points > 0:
-            if player1.ship_points < 1:
-                print(player2.player, "WINS!")
-                break
-
+            print(player1.player, "'s                        TOP BOARD           where", player1.player, "has fired.")
+            player1.print_board(player1.fired_upon_locations)
+            print("\n", player1.player, "IT IS YOUR TURN")
+            self.fire_at_ships(player1, player2)
+            self.check_player_board(player1)
             if player2.ship_points < 1:
                 print(player1.player, 'WINS!"')
                 break
-            else:
-                print(player1.player, "'s                        TOP BOARD           where", player1.player, "has fired.")
-                player1.print_board(player1.fired_upon_locations)
-                print("\n", player1.player, "IT IS YOUR TURN")
-                self.fire_at_ships(player1, player2)
-                self.check_player_board(player1)
-                if player2.ship_points < 1:
-                    print(player1.player, 'WINS!"')
-                    break
-                input("Press enter for next player to see his board.")
-                print(player2.player, "'s                   TOP BOARD                 where", player2.player, "has fired.")
-                player2.print_board(player2.fired_upon_locations)
-                print("\n", player2.player, "IT IS YOUR TURN")
-                self.fire_at_ships(player2, player1)
-                self.check_player_board(player2)
-                if player1.ship_points < 1:
-                    print(player2.player, "WINS!")
-                    break
-                input('Press enter for next player to see his board.')
+            input("Press enter for next player to see his board.")
+            print(player2.player, "'s                   TOP BOARD                 where", player2.player, "has fired.")
+            player2.print_board(player2.fired_upon_locations)
+            print("\n", player2.player, "IT IS YOUR TURN")
+            self.fire_at_ships(player2, player1)
+            self.check_player_board(player2)
+            if player1.ship_points < 1:
+                print(player2.player, "WINS!")
+                break
+            input('Press enter for next player to see his board.')
         print(player1.name, player1.ship_points, "vs", player2.name, player2.ship_points)
-
 
     def check_player_board(self, player):
         check_board = "NOT_RIGHT_ANSWER_YET"
