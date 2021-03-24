@@ -14,12 +14,11 @@ class Game:
         player2.board = player2.generate_board(player2.y_axis, player1.x_axis)
         player1.fired_upon_locations = player1.generate_board(player1.y_axis, player1.x_axis)
         player2.fired_upon_locations = player1.generate_board(player1.y_axis, player2.x_axis)
-        print("\n *ATTENTION* Two known bugs. \n 1) You can place your ships off the map, and it will crash the game.\n")
-        print(" 2) If you type for example, f11 when you meant to fire at F11, it will say you hit him, but will not\n mark the map, nor take his points, and will cost you another turn to properly type F11. So keep CAPS ON.")
+        print("\n *ATTENTION* known bug. \n*** You can place your ships off the map, and it will crash the game.\n")
         input("\n Press any key to acknowledge.")
 
         print("\n", "                 #@*&@^\----------BATTLESHIP----------- ... lol...")
-        print("A01 B01 C01 D01 E0#\  \  \  H01 I01 J01 K01 L01 M01 N01 O01 P01 Q01 R01 S01 T01\nA02 B02 C02 D02 E02 \  \  \ H02 I02 J02 K02 L02 M02 N02 O02 P02 Q02 R02 S02 T02\nA03 B03 C03 D03 E03 F\  \  \H03 I03 J03 K03 L03 M03 N03 O03 P03 Q03 R03 S03 T03\nA04 B04 C04 D04 E04 F \  \  \   I04 J04 K04 L04 M04 N04 O04 P04 Q04 R04 S04 T04\nA05 B05 C05 D05 E04 F04\  \__\__ _____________  M05 N05 O05 P05 Q05 R05 S05 T05\nA06 B06 C06 D06 E06 F06 \   H06 I06 J06 K06 L0| M06 N06 O06 P06 Q06 R06 S06 T06\nA07 B07 C07 D07 E07 F07 G\_ H07 I07 J07 K07 L0| M07 N07 O07 P07 Q07 R07 S07 T07\nA08 B08 C08 D08 E08 F08 G0\ H08 I08 J08 K08 L0| M08 N08 O08 P08 Q08 R08 S08 T08\nA09 B______________________ H09 I09 J09 K09 L0|________________ ___ ___ _______\nA10 B\     D10 E10 F10 G10 H10 I10 J10 K10 L10 M10 N10 O10 P10 Q10 R10 S10 T  |\nA11 B1\C11 D11 E11 F11 G11 H11 I11 J11 K11 L11 M11 N11 O11 P11 Q11 R11 S11  T1/\nA12 B12\    D12 E12 F12 G12 H12 I12 J12 K12 L12 M12 N12 O12 P12 Q12 R12 S12  /2\nA13 B13 \   D13 E13 F13 G13 H13 I13 J13 K13 L13 M1N13 O13 P13 Q13 R13 S13 /13\nA14 B14 C\  D14 E14 F14 G14 H14 I14 J14 K14 L14 M14 N14 O14 P14 Q14 R14 S14/T14\nA15 B15 C1\ D15 E15 F15 G15 H15 I15 J15 K15 L15 M15 N15 O15 P15 Q14 R15 S1/ T15\nA16 B16 C16\D16 E16 F16 G16 H16 I16 J16 K16 L16 M16 N16 O16 P16 Q16 R16 S/6 T16\nA17 B17 C17 \___E_____17G17___7___7_______17_L1__M17_N17_O17_P17__17_R17/S7 T17\nA18 B18 C18 D18 E18 F18 G18 H18 I18 J18 K18 L18 M18 N18 O18 P18 Q18 R18 S18 T18\nA19 B19 C19 D19 E19 F19 G19 H19 I19 J19 K19 L19 M19 N19 O19 P19 Q19 R19 S19 T19\nA20 B20 C20 D20 E20 F20 G20 H20 I20 J20 K20 L20 M20 N20 O20 P20 Q20 R20 S20 T20\n")
+        print("A01 B01 C01 D01 E0#\  \  \  H01 I01 J01 K01 L01 M01 N01 O01 P01 Q01 R01 S01 T01\nA02 B02 C02 D02 E02 \  \  \ H02 I02 J02 K02 L02 M02 N02 O02 P02 Q02 R02 S02 T02\nA03 B03 C03 D03 E03 F\  \  \H03 I03 J03 K03 L03 M03 N03 O03 P03 Q03 R03 S03 T03\nA04 B04 C04 D04 E04 F \  \  \   I04 J04 K04 L04 M04 N04 O04 P04 Q04 R04 S04 T04\nA05 B05 C05 D05 E04 F04\  \__\__ _____________  M05 N05 O05 P05 Q05 R05 S05 T05\nA06 B06 C06 D06 E06 F06 \   H06 I06 J06 K06 L0| M06 N06 O06 P06 Q06 R06 S06 T06\nA07 B07 C07 D07 E07 F07 G\_ H07 I07 J07 K07 L0| M07 N07 O07 P07 Q07 R07 S07 T07\nA08 B08 C08 D08 E08 F08 G0\ H08 I08 J08 K08 L0| M08 N08 O08 P08 Q08 R08 S08 T08\nA09 B______________________ H09 I09 J09 K09 L0|________________ ___ ___ _______\nA10 B\      D10 E10 F10 G10 H10 I10 J10 K10 L10 M10 N10 O10 P10 Q10 R10 S10 T  |\nA11 B1\ C11 D11 E11 F11 G11 H11 I11 J11 K11 L11 M11 N11 O11 P11 Q11 R11 S11  T1/\nA12 B12\    D12 E12 F12 G12 H12 I12 J12 K12 L12 M12 N12 O12 P12 Q12 R12 S12  /2\nA13 B13 \   D13 E13 F13 G13 H13 I13 J13 K13 L13 M13 N12 O13 P13 Q13 R13 S13 /13\nA14 B14 C\  D14 E14 F14 G14 H14 I14 J14 K14 L14 M14 N14 O14 P14 Q14 R14 S14/T14\nA15 B15 C1\ D15 E15 F15 G15 H15 I15 J15 K15 L15 M15 N15 O15 P15 Q14 R15 S1/ T15\nA16 B16 C16\D16 E16 F16 G16 H16 I16 J16 K16 L16 M16 N16 O16 P16 Q16 R16 S/6 T16\nA17 B17 C17 \___E_____17G17___7___7_______17_L1__M17_N17_O17_P17__17_R17/S7 T17\nA18 B18 C18 D18 E18 F18 G18 H18 I18 J18 K18 L18 M18 N18 O18 P18 Q18 R18 S18 T18\nA19 B19 C19 D19 E19 F19 G19 H19 I19 J19 K19 L19 M19 N19 O19 P19 Q19 R19 S19 T19\nA20 B20 C20 D20 E20 F20 G20 H20 I20 J20 K20 L20 M20 N20 O20 P20 Q20 R20 S20 T20\n")
         print("\n Player 1 what is your name?")
         self.create_player(player1)
         print("Player 2 what is your name?")
@@ -173,16 +172,15 @@ class Game:
         print("\n Choose where you want to fire!")
         print("Example, A01 or F09 or K18")
         fire = input("Please input the coordinates that you want to fire at to see if you hit your enemy?\n Don't forget CAPS LOCK ON:__ ")
-        hit = False
         hit = self.validate_fire(enemy, fire, player)
-        if hit == True:
+        if hit[0] == True:
             enemy.ship_points -= 1
-            self.fire_xy(player, fire, enemy)
+            self.fire_xy(player, hit[1], enemy)
             #print(player.player, "'s                        TOP BOARD           where", player.player, "has fired.")
             player.print_board(player.fired_upon_locations)
             print(" HIT!!!")
         else:
-            self.miss_fire_xy(player, fire, enemy)
+            self.miss_fire_xy(player, hit[1], enemy)
             #print(player.player, "'s                        TOP BOARD           where", player.player, "has fired.")
             player.print_board(player.fired_upon_locations)
             print("You missed..")
@@ -190,13 +188,13 @@ class Game:
     def validate_fire(self, player, fire, shooter):
         if fire in player.battleship_locations:
             print("FOUND HIM!")
-            return True
+            return True, fire
         i = 0
         j = 0
         while i < len(shooter.fired_upon_locations):
             while j < len(shooter.fired_upon_locations[i]):
                 if fire == shooter.fired_upon_locations[i][j]:
-                    return False
+                    return False, fire
                 j += 1
             i += 1
             j -= 20
@@ -245,22 +243,31 @@ class Game:
         while player1.ship_points > 0 or player2.ship_points > 0:
             if player1.ship_points < 1:
                 print(player2.player, "WINS!")
+                break
 
             if player2.ship_points < 1:
                 print(player1.player, 'WINS!"')
+                break
             else:
                 print(player1.player, "'s                        TOP BOARD           where", player1.player, "has fired.")
                 player1.print_board(player1.fired_upon_locations)
                 print("\n", player1.player, "IT IS YOUR TURN")
                 self.fire_at_ships(player1, player2)
                 self.check_player_board(player1)
+                if player2.ship_points < 1:
+                    print(player1.player, 'WINS!"')
+                    break
                 input("Press enter for next player to see his board.")
                 print(player2.player, "'s                   TOP BOARD                 where", player2.player, "has fired.")
                 player2.print_board(player2.fired_upon_locations)
                 print("\n", player2.player, "IT IS YOUR TURN")
                 self.fire_at_ships(player2, player1)
                 self.check_player_board(player2)
+                if player1.ship_points < 1:
+                    print(player2.player, "WINS!")
+                    break
                 input('Press enter for next player to see his board.')
+        print(player1.name, player1.ship_points, "vs", player2.name, player2.ship_points)
 
 
     def check_player_board(self, player):
