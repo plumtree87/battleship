@@ -41,7 +41,8 @@ class Game:
 
         print(player1.player, "IS IS YOUR TURN!")
         print("YOU MUST USE CAPS! if you fail to use CAPS, you will automatically MISS even if you put a10 and he was at A10. \n That's user validation for ya!")
-        self.play_rounds(player1, player2)
+        self.end = self.play_rounds(player1, player2)
+
 
     def create_player(self, player):
         name = input("_ ")
@@ -244,7 +245,7 @@ class Game:
             self.check_player_board(player1)
             if player2.ship_points < 1:
                 print(player1.player, 'WINS!"')
-                break
+                return True
             input("Press enter for next player to see his board.")
             print(player2.player, "'s                   TOP BOARD                 where", player2.player, "has fired.")
             player2.print_board(player2.fired_upon_locations)
@@ -253,7 +254,7 @@ class Game:
             self.check_player_board(player2)
             if player1.ship_points < 1:
                 print(player2.player, "WINS!")
-                break
+                return True
             input('Press enter for next player to see his board.')
         print(player1.name, player1.ship_points, "vs", player2.name, player2.ship_points)
 
@@ -270,3 +271,17 @@ class Game:
             else:
                 check_board = input("Would you like to check your bottom board? Y or N ")
         self.clear()
+
+    def re_play(self):
+        while self.end == True:
+            answer = "gibberish"
+            while answer != "N" or answer != "Y":
+                if answer == "Y":
+                    self.end = False
+                    self.game_start()
+                if answer == "N":
+                    self.end = False
+                    break
+
+                else:
+                    answer = input("Do you want to play again? Y or N   ")

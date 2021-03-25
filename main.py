@@ -5,3 +5,4 @@ if __name__ == '__main__':
 
     game = Game()
     game.game_start()
+    game.re_play()
