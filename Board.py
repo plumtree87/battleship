@@ -6,7 +6,7 @@ class Board:
         self.battleship_locations = []
         self.board = []
         self.fired_upon_locations = []
-        self.ship_points = 1
+        self.ship_points = 18
         self.player = ""
         self.destroyer = 2
         self.submarine = 3
