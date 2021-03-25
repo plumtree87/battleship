@@ -72,7 +72,7 @@ class Game:
         xy_choice = input("Choose the coordinate you want to place your submarine.._ ")
         xy_choice = self.validate_xy_choice(xy_choice, player)
         self.place_xy(player, xy_choice, player.submarine)
-        player.submarine -= 3
+        player.submarine += 3
         player.print_board(player.board)
         print("\ncarrier is ", player.carrier, "length.")
         xy_choice = input("Choose the coordinate you want to place your aircraft carrier.._ ")
