@@ -16,7 +16,6 @@ class Game:
         player2.fired_upon_locations = player1.generate_board(player1.y_axis, player2.x_axis)
         print("\n *ATTENTION* known bug. \n*** You can place your ships off the map, and it will crash the game.\n")
         input("\n Press any key to acknowledge.")
-
         print("\n", "                 #@*&@^\----------BATTLESHIP----------- ... lol...")
         print("A01 B01 C01 D01 E0#\  \  \  H01 I01 J01 K01 L01 M01 N01 O01 P01 Q01 R01 S01 T01\nA02 B02 C02 D02 E02 \  \  \ H02 I02 J02 K02 L02 M02 N02 O02 P02 Q02 R02 S02 T02\nA03 B03 C03 D03 E03 F\  \  \H03 I03 J03 K03 L03 M03 N03 O03 P03 Q03 R03 S03 T03\nA04 B04 C04 D04 E04 F \  \  \   I04 J04 K04 L04 M04 N04 O04 P04 Q04 R04 S04 T04\nA05 B05 C05 D05 E04 F04\  \__\__ _____________  M05 N05 O05 P05 Q05 R05 S05 T05\nA06 B06 C06 D06 E06 F06 \   H06 I06 J06 K06 L0| M06 N06 O06 P06 Q06 R06 S06 T06\nA07 B07 C07 D07 E07 F07 G\_ H07 I07 J07 K07 L0| M07 N07 O07 P07 Q07 R07 S07 T07\nA08 B08 C08 D08 E08 F08 G0\ H08 I08 J08 K08 L0| M08 N08 O08 P08 Q08 R08 S08 T08\nA09 B______________________ H09 I09 J09 K09 L0|________________ ___ ___ _______\nA10 B\      D10 E10 F10 G10 H10 I10 J10 K10 L10 M10 N10 O10 P10 Q10 R10 S10 T  |\nA11 B1\ C11 D11 E11 F11 G11 H11 I11 J11 K11 L11 M11 N11 O11 P11 Q11 R11 S11  T1/\nA12 B12\    D12 E12 F12 G12 H12 I12 J12 K12 L12 M12 N12 O12 P12 Q12 R12 S12  /2\nA13 B13 \   D13 E13 F13 G13 H13 I13 J13 K13 L13 M13 N12 O13 P13 Q13 R13 S13 /13\nA14 B14 C\  D14 E14 F14 G14 H14 I14 J14 K14 L14 M14 N14 O14 P14 Q14 R14 S14/T14\nA15 B15 C1\ D15 E15 F15 G15 H15 I15 J15 K15 L15 M15 N15 O15 P15 Q14 R15 S1/ T15\nA16 B16 C16\D16 E16 F16 G16 H16 I16 J16 K16 L16 M16 N16 O16 P16 Q16 R16 S/6 T16\nA17 B17 C17 \___E_____17G17___7___7_______17_L1__M17_N17_O17_P17__17_R17/S7 T17\nA18 B18 C18 D18 E18 F18 G18 H18 I18 J18 K18 L18 M18 N18 O18 P18 Q18 R18 S18 T18\nA19 B19 C19 D19 E19 F19 G19 H19 I19 J19 K19 L19 M19 N19 O19 P19 Q19 R19 S19 T19\nA20 B20 C20 D20 E20 F20 G20 H20 I20 J20 K20 L20 M20 N20 O20 P20 Q20 R20 S20 T20\n")
         print("\n Player 1 what is your name?")
@@ -31,7 +30,7 @@ class Game:
         sleep(3)
         self.clear()
 
-        input("press ENTER for next player to begin.")
+        input("press ENTER for next player to begin.\n")
         player2.print_board(player2.board)
         print("\n", player2.player, "Place your battleships")
         player2.board = self.place_ships(player2)
@@ -40,7 +39,7 @@ class Game:
         self.clear()
 
         print(player1.player, "IS IS YOUR TURN!")
-        print("YOU MUST USE CAPS! if you fail to use CAPS, you will automatically MISS even if you put a10 and he was at A10. \n That's user validation for ya!")
+        print(" ")
         self.end = self.play_rounds(player1, player2)
 
 
