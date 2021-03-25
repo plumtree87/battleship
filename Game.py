@@ -27,13 +27,13 @@ class Game:
         print("\n**NOTE** It's easier to play with CAPS LOCK ON: \n", player1.player, "Place your battleships")
 
         player1.board = self.place_ships(player1)
-        print("OK", player1.player, "your ships are all set! Now it's the turn of", player2.player)
+        print("\nOK", player1.player, "your ships are all set! Now it's the turn of", player2.player)
         sleep(3)
         self.clear()
 
         input("press ENTER for next player to begin.")
         player2.print_board(player2.board)
-        print(player2.player, "Place your battleships")
+        print("\n", player2.player, "Place your battleships")
         player2.board = self.place_ships(player2)
         print("OK BOTH TEAMS ARE SET")
         sleep(3)
@@ -112,7 +112,7 @@ class Game:
                     print("*NOTE* PLAY WITH CAPS LOCK ON!")
                     print(G + "This ship is", ship_type, "coordinates long" + W)
                     print(
-                        "Do you want it's length to go up, down, left or right from here? To answer, use u, D, L, or R")
+                        "Do you want it's length to go up, down, left or right from here? To answer, use U, D, L, or R")
                     while choice != "U" or choice != "D" or choice != "L" or choice != "R":
                         if choice == "U":
                             player.battleship_locations.append(player.board[i][j])
@@ -216,6 +216,7 @@ class Game:
                 j += 1
             i += 1
             j -= 20
+        print(" ")
         print(player_firing.player, "'s            TOP BOARD            places you've fired")
 
     def fire_xy(self, player_firing, fire_coordinates, enemy_being_fired_at):
@@ -234,6 +235,7 @@ class Game:
                 j += 1
             i += 1
             j -= 20
+        print(" ")
         print(player_firing.player, "'s            TOP BOARD            places you've fired")
 
     def play_rounds(self, player1, player2):
@@ -246,7 +248,7 @@ class Game:
             if player2.ship_points < 1:
                 print(player1.player, 'WINS!"')
                 return True
-            input("Press enter for next player to see his board.")
+            input("Press enter for next player to see his board.\n")
             print(player2.player, "'s                   TOP BOARD                 where", player2.player, "has fired.")
             player2.print_board(player2.fired_upon_locations)
             print("\n", player2.player, "IT IS YOUR TURN")
@@ -255,7 +257,7 @@ class Game:
             if player1.ship_points < 1:
                 print(player2.player, "WINS!")
                 return True
-            input('Press enter for next player to see his board.')
+            input('Press enter for next player to see his board.\n')
         print(player1.name, player1.ship_points, "vs", player2.name, player2.ship_points)
 
     def check_player_board(self, player):
